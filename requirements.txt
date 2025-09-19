@@ -1,0 +1,8 @@
+openai
+pandas
+tqdm
+numpy
+scikit-learn
+sentence-transformers
+python-dotenv
+groq
