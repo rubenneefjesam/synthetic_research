@@ -81,33 +81,39 @@ def build_prompt(row):
 
 def call_llm(prompt: str):
     """
-    Uses new OpenAI client (openai>=1.0). Returns (text, error).
+    Call Groq Chat Completions endpoint (OpenAI-compatible path).
+    Uses env var GROQ_API (already set in Codespaces).
     """
+    import requests, json
+    key = os.getenv("GROQ_API") or os.getenv("GROQ_API_KEY") or os.getenv("OPENAI_API_KEY")
+    if not key:
+        return None, "No GROQ_API / OPENAI_API_KEY found in env"
+
+    url = "https://api.groq.com/openai/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {key}",
+        "Content-Type": "application/json",
+    }
+    payload = {
+        "model": MODEL,
+        "messages": [
+            {"role": "system", "content": "Je bent een beknopte, praktische adviseur. Antwoord in het Nederlands."},
+            {"role": "user", "content": prompt}
+        ],
+        "max_tokens": 400,
+        "temperature": 0.3,
+    }
     try:
-        # import here so the rest of the script can run even if openai not installed / older
-        from openai import OpenAI
-        client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else OpenAI()
-
-        resp = client.chat.completions.create(
-            model=MODEL,
-            messages=[
-                {"role": "system", "content": "Je bent een beknopte, praktische adviseur. Antwoord in het Nederlands."},
-                {"role": "user", "content": prompt}
-            ],
-            max_tokens=400,
-            temperature=0.3,
-        )
-
-        # try structured access; fallback to dict-access; finally stringify
+        resp = requests.post(url, json=payload, headers=headers, timeout=30)
+        if resp.status_code != 200:
+            return None, f"Error code: {resp.status_code} - {resp.text}"
+        j = resp.json()
+        # standard OpenAI-like response parsing
         try:
-            text = resp.choices[0].message.content
+            text = j["choices"][0]["message"]["content"]
         except Exception:
-            try:
-                text = resp["choices"][0]["message"]["content"]
-            except Exception:
-                text = str(resp)
-        if isinstance(text, bytes):
-            text = text.decode("utf-8", errors="ignore")
+            # fallback: try other structures
+            text = str(j)
         return text.strip(), None
     except Exception as e:
         return None, str(e)
