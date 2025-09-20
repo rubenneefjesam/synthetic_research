@@ -1,32 +1,42 @@
 Start generator — CSV: data/volker_nexus_group_populatie_2000_clean.csv
 
 [1/10] Generating for medewerker_id=VNG-445ZWZ functie=Monteur W-tech
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 
 [2/10] Generating for medewerker_id=VNG-YYBMJM functie=Magazijnbeheerder
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 
 [3/10] Generating for medewerker_id=VNG-8E1F4U functie=Logistiek coördinator
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 
 [4/10] Generating for medewerker_id=VNG-LXPLPJ functie=Contractmanager
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 
 [5/10] Generating for medewerker_id=VNG-6M0559 functie=Teamleider Uitvoering
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 
 [6/10] Generating for medewerker_id=VNG-7P1I0J functie=Monteur E-tech
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 
 [7/10] Generating for medewerker_id=VNG-8Z3KKF functie=IT Support
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 
 [8/10] Generating for medewerker_id=VNG-QKNVQ7 functie=Monteur W-tech
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 
 [9/10] Generating for medewerker_id=VNG-5TFJ4V functie=Monteur E-tech
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 
 [10/10] Generating for medewerker_id=VNG-JJMKWE functie=HR-adviseur
-  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+  ERROR: Error code: 404 - {"error":{"message":"The model `gpt-4o` does not exist or you do not have access to it.","type":"invalid_request_error","code":"model_not_found"}}
+
 Done. Wrote results to results/generated_answers.jsonl. Errors: 10
