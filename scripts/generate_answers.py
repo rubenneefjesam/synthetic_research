@@ -81,10 +81,11 @@ def build_prompt(row):
 
 def call_llm(prompt: str):
     """
-    Call Groq chat completions (OpenAI-compatible path).
-    Uses env var GROQ_API; returns (text, error).
+    Groq HTTP caller. Tries a short list of Groq models (returns first successful).
+    Uses env var GROQ_API. Returns (text, error).
     """
-    import requests, os, json
+    import requests, json, os, time
+
     key = os.getenv("GROQ_API") or os.getenv("GROQ_API_KEY")
     if not key:
         return None, "No GROQ_API found in env"
@@ -92,28 +93,54 @@ def call_llm(prompt: str):
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
 
-    payload = {
-        "model": os.getenv("MODEL", "mixtral-8x7b-32768"),
-        "messages": [
-            {"role": "system", "content": "Je bent een beknopte, praktische adviseur. Antwoord in het Nederlands."},
-            {"role": "user", "content": prompt}
-        ],
-        "max_tokens": 400,
-        "temperature": 0.3,
-    }
-    try:
-        resp = requests.post(url, json=payload, headers=headers, timeout=30)
-        if resp.status_code != 200:
-            return None, f"Error code: {resp.status_code} - {resp.text}"
-        j = resp.json()
+    # candidates (prefer explicit MODEL env, else try these)
+    candidates = []
+    env_model = os.getenv("MODEL")
+    if env_model:
+        candidates.append(env_model)
+    candidates += [
+        "groq/compound",
+        "groq/compound-mini",
+        "llama-3.1-8b-instant",
+        "llama-3.3-70b-versatile",
+        "openai/gpt-oss-20b"
+    ]
+
+    last_err = None
+    for m in candidates:
+        payload = {
+            "model": m,
+            "messages": [
+                {"role": "system", "content": "Je bent een beknopte, praktische adviseur. Antwoord in het Nederlands."},
+                {"role": "user", "content": prompt}
+            ],
+            "max_tokens": 400,
+            "temperature": 0.3,
+        }
         try:
-            text = j["choices"][0]["message"]["content"]
-        except Exception:
-            # fallback when different structure
-            text = json.dumps(j, ensure_ascii=False)
-        return text.strip(), None
-    except Exception as e:
-        return None, str(e)
+            resp = requests.post(url, json=payload, headers=headers, timeout=30)
+        except Exception as e:
+            last_err = f"Network error while trying model {m}: {e}"
+            continue
+
+        if resp.status_code == 200:
+            try:
+                j = resp.json()
+                # prefer structured OpenAI-like response
+                text = j["choices"][0]["message"]["content"]
+            except Exception:
+                # fallback: stringify JSON if structure differs
+                text = json.dumps(j, ensure_ascii=False)
+            return text.strip(), None
+        else:
+            last_err = f"Model {m} returned {resp.status_code}: {resp.text}"
+            # for auth errors stop early
+            if resp.status_code in (401, 403):
+                return None, last_err
+            # otherwise try next model
+            time.sleep(0.2)
+
+    return None, last_err or "No model succeeded"
 
 def main():
     print("Start generator — CSV:", CSV_PATH)
