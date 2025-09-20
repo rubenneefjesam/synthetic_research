@@ -1,123 +1,32 @@
 Start generator — CSV: data/volker_nexus_group_populatie_2000_clean.csv
-generating:   0%|          | 0/10 [00:00<?, ?it/s]generating:  10%|█         | 1/10 [00:00<00:02,  4.00it/s]generating:  20%|██        | 2/10 [00:00<00:02,  3.99it/s]generating:  30%|███       | 3/10 [00:00<00:01,  3.98it/s]generating:  40%|████      | 4/10 [00:01<00:01,  3.99it/s]generating:  50%|█████     | 5/10 [00:01<00:01,  3.99it/s]generating:  60%|██████    | 6/10 [00:01<00:01,  3.99it/s]generating:  70%|███████   | 7/10 [00:01<00:00,  3.99it/s]generating:  80%|████████  | 8/10 [00:02<00:00,  3.99it/s]generating:  90%|█████████ | 9/10 [00:02<00:00,  3.99it/s]generating: 100%|██████████| 10/10 [00:02<00:00,  3.99it/s]generating: 100%|██████████| 10/10 [00:02<00:00,  3.99it/s]
 
 [1/10] Generating for medewerker_id=VNG-445ZWZ functie=Monteur W-tech
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 
 [2/10] Generating for medewerker_id=VNG-YYBMJM functie=Magazijnbeheerder
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 
 [3/10] Generating for medewerker_id=VNG-8E1F4U functie=Logistiek coördinator
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 
 [4/10] Generating for medewerker_id=VNG-LXPLPJ functie=Contractmanager
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 
 [5/10] Generating for medewerker_id=VNG-6M0559 functie=Teamleider Uitvoering
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 
 [6/10] Generating for medewerker_id=VNG-7P1I0J functie=Monteur E-tech
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 
 [7/10] Generating for medewerker_id=VNG-8Z3KKF functie=IT Support
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 
 [8/10] Generating for medewerker_id=VNG-QKNVQ7 functie=Monteur W-tech
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 
 [9/10] Generating for medewerker_id=VNG-5TFJ4V functie=Monteur E-tech
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 
 [10/10] Generating for medewerker_id=VNG-JJMKWE functie=HR-adviseur
-  ERROR: 
-
-You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
-
-You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
-
-Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
-
-A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
-
+  ERROR: Error code: 401 - {'error': {'message': 'Incorrect API key provided: gsk_F6Om********************************************g6fc. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
 Done. Wrote results to results/generated_answers.jsonl. Errors: 10
