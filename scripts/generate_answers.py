@@ -81,21 +81,19 @@ def build_prompt(row):
 
 def call_llm(prompt: str):
     """
-    Call Groq Chat Completions endpoint (OpenAI-compatible path).
-    Uses env var GROQ_API (already set in Codespaces).
+    Call Groq chat completions (OpenAI-compatible path).
+    Uses env var GROQ_API; returns (text, error).
     """
-    import requests, json
-    key = os.getenv("GROQ_API") or os.getenv("GROQ_API_KEY") or os.getenv("OPENAI_API_KEY")
+    import requests, os, json
+    key = os.getenv("GROQ_API") or os.getenv("GROQ_API_KEY")
     if not key:
-        return None, "No GROQ_API / OPENAI_API_KEY found in env"
+        return None, "No GROQ_API found in env"
 
     url = "https://api.groq.com/openai/v1/chat/completions"
-    headers = {
-        "Authorization": f"Bearer {key}",
-        "Content-Type": "application/json",
-    }
+    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+
     payload = {
-        "model": MODEL,
+        "model": os.getenv("MODEL", "mixtral-8x7b-32768"),
         "messages": [
             {"role": "system", "content": "Je bent een beknopte, praktische adviseur. Antwoord in het Nederlands."},
             {"role": "user", "content": prompt}
@@ -108,12 +106,11 @@ def call_llm(prompt: str):
         if resp.status_code != 200:
             return None, f"Error code: {resp.status_code} - {resp.text}"
         j = resp.json()
-        # standard OpenAI-like response parsing
         try:
             text = j["choices"][0]["message"]["content"]
         except Exception:
-            # fallback: try other structures
-            text = str(j)
+            # fallback when different structure
+            text = json.dumps(j, ensure_ascii=False)
         return text.strip(), None
     except Exception as e:
         return None, str(e)
